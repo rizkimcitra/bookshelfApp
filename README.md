@@ -18,7 +18,8 @@ Ini merupakan hasil untuk submission project akhir Dicoding Academy dalam modul 
 - JavaScript
 - SASS
 
-**Rizki Maulana Citra**
+## Rizki Maulana Citra
+nama saya Rizki Maulana Citra. Saya berasal dari Kabupaten Pandeglang, Banten. Tepatnya dari Desa Giripawana. Senang berkenalan dengan Anda.
 
 - [Profile](https://github.com/mlnzyx "Rizki Maulana Citra")
 - [Email](mailto:iniakunya7@gmail.com?subject=Hi "Sapa Saya!")
