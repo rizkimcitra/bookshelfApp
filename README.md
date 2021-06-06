@@ -5,7 +5,7 @@ Ini merupakan hasil untuk submission project akhir Dicoding Academy dalam modul 
 
 ## Links
 
-- [Repo](https://github.com/mlnzyz/bookshelfApp "Bookshelf App")
+- [Repo](https://github.com/mlnzyx/bookshelfApp "Bookshelf App")
 - [Demo](https://bookshelfapp.vercel.app "Demo")
 
 ## Screenshots
