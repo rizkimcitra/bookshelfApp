@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Primary Meta Tags -->
+    <title>Basic Bookshelf APP</title>
+    <meta name="title" content="Basic Bookshelf APP" />
+    <meta name="description" content="Basic Bookshelf APP create with plain old JavaScript and SASS" />
+    <meta name="keywords" content="Bookshelf App, Todo-app, Todo List, dynamic javascript web" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Indonesia" />
+    <meta name="author" content="Rizki Maulana Citra" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bookshelfapp.vercel.app" />
+    <meta property="og:title" content="Basic Bookshelf APP" />
+    <meta property="og:description" content="Basic Bookshelf APP create with plain old JavaScript and SASS" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://bookshelfapp.vercel.app" />
+    <meta property="twitter:title" content="Basic Bookshelf APP" />
+    <meta property="twitter:description" content="Basic Bookshelf APP create with plain old JavaScript and SASS" />
+
+    <!-- stylesheet start -->
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="shortcut icon" href="./assets/icons/book-unread.svg" type="image/x-icon" />
+    <!-- stylesheet end -->
+
+    <!-- Npm, cdn, jsdelivr, font api start -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Npm, cdn, jsdelivr, font api end -->
+  </head>
+  <body>
+    <header class="header isNormal" id="headerNav">
+      <div class="logo"><span class="title">Bookshelf App</span></div>
+    </header>
+
+    <main id="main">
+      <div class="container shadow bd-rad">
+        <div class="titlearea">
+          <h1 class="heading">Daftar Buku</h1>
+          <p class="desc">Untuk menambahkan Buku baru, tekan tombol tambahkan yang ada dibawah</p>
+        </div>
+
+        <div class="wrapper">
+          <div class="list-item left" id="books">
+            <h2 class="headerShelf">Daftar Buku yang belum dibaca</h2>
+          </div>
+
+          <div class="list-item right" id="completed-books">
+            <h2 class="headerShelf">Daftar Buku yang sudah dibaca</h2>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-bottom" id="showingForm">
+        <span><i class="bx bx-plus"></i></span><span>Tambahkan Buku</span>
+      </button>
+
+      <div class="formArea shadow" id="hiddenForm">
+        <form action="" id="add-books">
+          <h1 class="heading">Yuk, Tambahkan Buku Baru!</h1>
+          <div class="inputGroup titleAuthor">
+            <label for="title">Judul</label>
+            <input type="text" name="title" id="title" class="inputStyle bd-rad" required placeholder="Judul Buku yang akan dimasukkan" />
+
+            <label for="author">Penulis</label>
+            <input type="text" name="author" id="author" class="inputStyle bd-rad" required placeholder="Penulis Buku" />
+
+            <label for="year">Tahun</label>
+            <input type="text" name="year" id="year" class="inputStyle bd-rad" required placeholder="Tahun terbitnya Buku" />
+
+            <label for="description">Deskripsi</label>
+            <textarea name="description" id="description" placeholder="Jelaskan tentang Buku." class="inputStyle txtArea bd-rad"></textarea>
+          </div>
+
+          <div class="yearIsRead">
+            <label for="isRead">Selesai dibaca</label>
+            <input type="checkbox" name="isRead" id="isRead" />
+          </div>
+
+          <div class="buttons">
+            <div class="btn back bd-rad" id="closeForm">Kembali</div>
+            <input type="submit" name="submit" class="btn submit bd-rad" value="Tambah" />
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="./js/data.js"></script>
+    <script src="./js/dom.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
