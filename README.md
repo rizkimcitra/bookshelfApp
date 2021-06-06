@@ -20,6 +20,6 @@ Ini merupakan hasil untuk submission project akhir Dicoding Academy dalam modul 
 
 ## Tentang Saya
 <p>Nama saya Rizki Maulana Citra. Saya berasal dari Kabupaten Pandeglang, Banten. Tepatnya dari Desa Giripawana. Senang berkenalan dengan anda!.</p>
-- [Profil Saya](https://github.com/mlnzyx "Rizki Maulana Citra")
-- [Email Saya](mailto:iniakunya7@gmail.com?subject=Hi "Sapa Saya!")
-- [Website Saya](https://rizkidev.vercel.app "Kunjungi Website saya")
+- [Profil](https://github.com/mlnzyx "Rizki Maulana Citra")
+- [Email](mailto:iniakunya7@gmail.com?subject=Hi "Sapa Saya!")
+- [Website](https://rizkidev.vercel.app "Kunjungi Website saya")
