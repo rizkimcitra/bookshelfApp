@@ -588,6 +588,11 @@ main .backdrop {
   .formArea {
     padding: 3rem 2rem;
   }
+  .formArea form > .inputGroup .inputStyle.txtArea {
+    width: 100%;
+    height: 5rem;
+    resize: none;
+  }
 }
 
 @media screen and (max-width: 368px) {
@@ -627,6 +632,11 @@ main .backdrop {
   }
   .formArea {
     padding: 3rem 1rem;
+  }
+  .formArea form > .inputGroup .inputStyle.txtArea {
+    width: 100%;
+    height: 4rem;
+    resize: none;
   }
   .item .imageBook {
     display: block;
