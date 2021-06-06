@@ -1,0 +1,473 @@
+@import "variables";
+@import "mixin";
+
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  font-family: $font;
+  background-color: $background-clr;
+  margin-top: 7rem;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $heading-clr;
+  }
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  p {
+    color: $paragraph-clr2;
+  }
+}
+
+.bd-rad {
+  border-radius: 0.344rem;
+}
+.shadow {
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+}
+.shadowLight {
+  box-shadow: 0 3px 6px rgba(154, 160, 185, 0.05), 0 8px 20px rgba(166, 173, 201, 0.2);
+}
+
+.header {
+  @include flexRowAllCenter();
+  width: 100%;
+  position: fixed;
+  z-index: 10001;
+  top: 0;
+  background-color: $primary-clr;
+  transition: height 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.header.isNormal {
+  height: 6rem;
+}
+.header.isSmaller {
+  height: 5rem;
+}
+.logo {
+  user-select: none;
+  @include flexRowAllCenter();
+  .title {
+    font-size: $title-fnt;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: $font-clr1;
+  }
+}
+
+.formArea {
+  width: 100%;
+  border-radius: 2.5% 2.5% 0 0;
+  padding: 2.5rem 20rem;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translateY(100%);
+  z-index: 1001;
+  .heading {
+    text-align: center;
+    font-weight: 500;
+    font-size: $heading-fnt;
+    color: $font-clr2;
+  }
+  form,
+  form > .inputGroup {
+    @include flexColAllCenter();
+    align-items: unset;
+
+    label {
+      font-size: $paragraph-fnt;
+      color: $paragraph-clr2;
+      margin: 1.25rem 0 0.25rem 0.25rem;
+      opacity: 0.85;
+      user-select: none;
+    }
+    .inputStyle {
+      position: relative;
+      overflow: hidden;
+      outline: none;
+      width: 100%;
+      height: 2.25rem;
+      border: 1px solid hsla(210, 96%, 4%, 0.05);
+      background-color: hsl(0, 0%, 98%);
+      padding: 0.7rem;
+      font-family: $font;
+      transition: 0.2s ease;
+      &:focus {
+        border: 1px solid hsla(210, 96%, 4%, 0.555);
+        transform: translate(0.244rem);
+        background-color: hsl(0, 0%, 100%);
+      }
+    }
+    .inputStyle.txtArea {
+      width: 100%;
+      height: 8rem;
+      resize: none;
+    }
+    ::placeholder {
+      font-family: $font;
+      letter-spacing: 1px;
+      font-size: calc(#{$paragraph-fnt} - 0.299rem);
+      opacity: 0.5;
+      transition: 0.2s ease;
+      color: $paragraph-clr2;
+    }
+    .inputStyle:focus::placeholder {
+      opacity: 0.75;
+    }
+  }
+  .yearIsRead {
+    margin-top: 0.5rem;
+  }
+  .buttons {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    margin-top: 1rem;
+
+    .btn {
+      height: 2.25rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-family: $font;
+      font-size: 1rem;
+      color: $paragraph-clr1;
+    }
+    .btn.back {
+      margin-right: 0.25rem;
+      background-color: $paragraph-clr2;
+      display: grid;
+      place-items: center;
+    }
+    .btn.submit {
+      margin-left: 0.25rem;
+      background-color: $primary-clr;
+    }
+  }
+}
+
+.show {
+  transform: translate(0);
+}
+
+.btn-bottom {
+  @include flexRowAllCenter();
+  border-radius: 0.344rem;
+  position: fixed;
+  bottom: 0.5rem;
+  left: 0;
+  width: 95%;
+  margin-left: 2.5%;
+  height: 2.25rem;
+  border: none;
+  background-color: $primary-clr;
+  cursor: pointer;
+  font-family: $font;
+  font-size: $paragraph-fnt;
+  font-weight: 300;
+  color: $font-clr1;
+  z-index: 1000;
+  span {
+    margin: 0 0.5rem;
+  }
+}
+
+main .container {
+  position: relative;
+  margin: 2.5rem 15rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: transparent;
+  .titlearea {
+    width: 100%;
+    background-color: #fff;
+    padding: 1.234rem 1.55rem;
+  }
+  .heading {
+    font-size: $heading-fnt;
+    color: $font-clr2;
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .desc {
+    font-size: $paragraph-fnt;
+    color: $paragraph-clr2;
+    text-align: center;
+  }
+
+  .wrapper {
+    padding: 1.234rem 1.55rem;
+    @include flexRowAllCenter();
+    align-items: stretch;
+    width: 100%;
+    margin-top: 5rem;
+  }
+  .wrapper > div {
+    flex-basis: auto;
+  }
+  .list-item {
+    padding: 0 1.2rem;
+    .headerShelf {
+      text-align: center;
+      font-size: calc(#{$heading-fnt} - 0.23rem);
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 2.75rem;
+      color: $font-clr2;
+    }
+    margin: 1.25rem 0;
+    width: 100%;
+    background-color: transparent;
+  }
+}
+.list-item.left {
+  border-right: 1px solid hsla(210, 96%, 4%, 0.05);
+}
+.list-item.right {
+  border-left: 1px solid hsla(210, 96%, 4%, 0.05);
+}
+main .backdrop {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: hsl(210, 96%, 4%);
+  opacity: 0.5;
+  transition: 0.3s ease;
+  animation: backDropshow 0.4s ease forwards;
+  z-index: 55;
+}
+
+.item {
+  transition: 0.3s ease;
+  animation: showItem 0.5s ease forwards;
+  .imageBook {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1.34rem;
+    width: 100px;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: calc(#{$heading-fnt} - 0.353rem);
+    letter-spacing: 1px;
+  }
+  h5 {
+    font-weight: 400;
+    margin-top: 1.75rem;
+    font-size: $paragraph-fnt;
+    color: $paragraph-clr2;
+  }
+  .book-rlsd {
+    font-weight: 300;
+    font-size: $smaller-fnt;
+  }
+  .book-desc {
+    font-weight: 300;
+    font-size: calc(#{$smaller-fnt} + 0.195rem);
+    margin-top: 0.5rem;
+  }
+  button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+  }
+  .btn-unread {
+    background-color: $primary-clr;
+    color: $paragraph-clr1;
+    padding: 0.25rem 0.45rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+    font-size: $smaller-fnt;
+    border-radius: 0.344rem;
+  }
+  .btn-read {
+    background-color: #2bff00;
+    color: #000;
+    padding: 0.25rem 0.45rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+    font-size: $smaller-fnt;
+    border-radius: 0.344rem;
+  }
+  .btn-delete {
+    background-color: #ff1e1e;
+    color: $paragraph-clr1;
+    padding: 0.25rem 0.45rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+    font-size: $smaller-fnt;
+    border-radius: 0.344rem;
+  }
+}
+@keyframes showItem {
+  0% {
+    background-color: #fff;
+    padding: 0.75rem 0.95rem;
+    margin: 0.75rem 0.25rem;
+    display: block;
+    transform: scale(0);
+  }
+  50% {
+    background-color: #fff;
+    padding: 0.75rem 0.95rem;
+    margin: 0.75rem 0.25rem;
+    display: block;
+  }
+  100% {
+    background-color: #fff;
+    padding: 0.75rem 0.95rem;
+    margin: 0.75rem 0.25rem;
+    display: block;
+    transform: scale(1);
+  }
+}
+
+@media screen and(max-width: 1440px) {
+  main .container {
+    margin: 2.1rem 8rem;
+  }
+  .formArea {
+    padding: 4rem 15rem;
+  }
+}
+
+@media screen and(max-width: 968px) {
+  main .container {
+    margin: 2rem 5rem;
+  }
+  .formArea {
+    padding: 3rem 8rem;
+  }
+}
+@media screen and(max-width: 768px) {
+  main .container {
+    margin: 1.5rem 3rem;
+  }
+  .formArea {
+    padding: 3rem 4rem;
+  }
+}
+@media screen and(max-width: 568px) {
+  main .container {
+    margin: 1rem 1.5rem;
+  }
+  .formArea {
+    padding: 3rem 2rem;
+  }
+}
+@media screen and(max-width: 368px) {
+  body {
+    margin-top: 4.5rem;
+  }
+
+  .header.isNormal {
+    height: 4rem;
+  }
+
+  .header.isSmaller {
+    height: 3.5rem;
+  }
+
+  main .container {
+    margin: 0.5rem 0.5rem;
+    .titlearea {
+      padding: 1rem 1.2rem;
+    }
+    .heading {
+      font-size: calc(#{$heading-fnt} - 0.5rem);
+    }
+    .desc {
+      font-size: calc(#{$paragraph-fnt} - 0.23rem);
+    }
+    .wrapper {
+      padding: 1rem 0.5rem;
+      margin-top: 2.5rem;
+    }
+    .list-item {
+      padding: 0 0.5rem;
+      margin: 1rem 0;
+      .headerShelf {
+        font-size: calc(#{$heading-fnt} - 0.55rem);
+        line-height: 1.25rem;
+        margin-bottom: 1.25rem;
+      }
+    }
+  }
+
+  .formArea {
+    padding: 3rem 1rem;
+  }
+
+  .item {
+    .imageBook {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 0.54rem;
+      width: 50px;
+    }
+    h2 {
+      font-size: calc(#{$heading-fnt} - 0.653rem);
+    }
+    h5 {
+      margin-top: 1.25rem;
+      font-size: calc(#{$paragraph-fnt} - 0.344rem);
+    }
+    .book-rlsd {
+      font-weight: 300;
+      font-size: calc(#{$paragraph-fnt} - 0.5rem);
+    }
+    .book-desc {
+      font-weight: 300;
+      font-size: calc(#{$paragraph-fnt} - 0.4rem);
+    }
+    .btn-unread {
+      height: auto;
+      font-size: calc(#{$smaller-fnt} - 0.189rem);
+    }
+    .btn-read {
+      height: auto;
+      font-size: calc(#{$smaller-fnt} - 0.189rem);
+    }
+    .btn-delete {
+      height: auto;
+      font-size: calc(#{$smaller-fnt} - 0.189rem);
+    }
+  }
+  main .backdrop {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: hsl(210, 96%, 4%);
+    opacity: 0.5;
+    transition: 0.3s ease;
+    animation: backDropshow 0.4s ease forwards;
+    z-index: 55;
+  }
+}
+@media screen and(max-width: 328px) {
+  main .container {
+    margin: 0.25rem 0.25rem;
+  }
+}
